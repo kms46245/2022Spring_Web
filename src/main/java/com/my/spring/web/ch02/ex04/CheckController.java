@@ -1,12 +1,14 @@
 package com.my.spring.web.ch02.ex04;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("ch02/ex04")
@@ -43,13 +45,17 @@ public class CheckController {
 	}
 	
 	// 과제] request parameter를 받도록 수정하라.
+	/*
+	 * @PostMapping("checkbox") public String checkbox(@RequestParam
+	 * ArrayList<String> fruit) {
+	 * 
+	 * System.out.println(fruit); return "ch02/ex04/main"; }
+	 */
+	
+	// 과제] 값이 checkOut에 넘어가도록 리팩터링하라.
 	@PostMapping("checkbox")
-	public String checkbox(@ModelAttribute("fruit") ArrayList<String> fruits) {
-		String fruit = "";
-		for(String frt : fruits)
-			fruit += frt;
-		
-		System.out.println(fruit);
-		return "ch02/ex04/main";
-	}
+	public String checkbox(@RequestParam("fruit") List<String> fruits, Model model) {
+		model.addAttribute("fruits", fruits);
+		return "ch02/ex04/checkboxOut";
+	}	 
 }
