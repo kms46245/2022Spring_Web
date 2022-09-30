@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org/DTD Mapper 3.0//EN'
+	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.my.spring.web.ch04.dao.map.EmployeeMap'>
+	<select id='selectEmployee' resultType='employee'>	<!-- 해당 타입의 별명은 앱의 properties에서 지어주도록 설정 -->
+		select employee_id, last_name, hire_date
+		from employees
+		where employee_id = #{employeeId}
+	</select>
+</mapper>

@@ -1,3 +1,4 @@
+package com.my.spring.web.ch02.home.mine;
 /*
  * package com.my.spring.web.ch02.home;
  * 

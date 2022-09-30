@@ -1,10 +1,8 @@
-package com.my.spring.web.ch02.home.mine;
+package com.my.spring.web.ch02.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.my.spring.web.ch02.home.Number;
 
 @Controller
 @RequestMapping("ch02/home")

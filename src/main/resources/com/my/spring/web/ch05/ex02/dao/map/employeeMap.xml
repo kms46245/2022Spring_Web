@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org/DTD Mapper 3.0//EN'
+	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.my.spring.web.ch05.dao.map.UserMap'>
+	<select id='selectUsers' resultType='user'>	<!-- 해당 타입의 별명은 앱의 properties에서 지어주도록 설정 -->
+		select user_id, user_name, birthday
+		from users
+		order by user_id
+	</select>
+	
+	<insert id='insertUser'>
+		insert into users
+		values(#{userId}, #{userName}, #{birthday})
+	</insert>
+	
+	<update id='updateUser'>
+		update users
+		set user_name = #{userName}, birthday = #{birthday}
+		where user_id = #{userId}
+	</update>
+	
+	<delete id='deleteUser'>
+		delete users
+		where user_id= #{userId}
+	</delete>
+</mapper>
