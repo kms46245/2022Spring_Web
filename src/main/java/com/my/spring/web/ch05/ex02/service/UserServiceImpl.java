@@ -3,12 +3,12 @@ package com.my.spring.web.ch05.ex02.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.my.spring.web.ch05.domain.User;
 import com.my.spring.web.ch05.ex02.dao.UserDao;
 
-@Repository("ch05.ex02.userDao")
+@Service("ch05.ex02.userService")
 public class UserServiceImpl implements UserService{
 	@Autowired private UserDao userDao;
 	
